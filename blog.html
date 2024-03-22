@@ -9,6 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
     </style>
     <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
     <div class="container">
@@ -48,62 +49,20 @@
 
         <div class="blog">
             <p class="latest-post_title">Articles & News</p>
-            <div class="blog-articles">
-                <div class="article">
-                    <img src="./img/Article1.png" alt="article1">
-                    <p class="article-title">Let’s Get Solution For Building Construction Work</p>
-                    <div class="article-footer">
-                        <p class="article-date">26 December,2022</p>
-                        <img src="./img/arrow.png" alt="arrow">
-                    </div>
+            
+            <div id="articles-news" class="blog-articles">
+                <div class="articles-list">
+                    <article v-for="article in articlesData" :key="article.id">
+                        <img :src="article.image" alt="Изображение новости">
+                        <p class="article-title">{{ article.title }}</p>
+                        <div class="article-footer">
+                            <span class="article-date">{{ article.date }}</span>
+                            <img src="./img/arrow.png" alt="arrow">
+                        </div>
+                    </article>
                 </div>
-
-                <div class="article">
-                    <img src="./img/Article2.png" alt="article1">
-                    <p class="article-title">Low Cost Latest Invented Interior Designing Ideas.</p>
-                    <div class="article-footer">
-                        <p class="article-date">22 December,2022</p>
-                        <img src="./img/arrow.png" alt="arrow">
-                    </div>
-                </div>
-
-                <div class="article">
-                    <img src="./img/Article3.png" alt="article1">
-                    <p class="article-title">Best For Any Office & Business Interior Solution</p>
-                    <div class="article-footer">
-                        <p class="article-date">25 December,2022</p>
-                        <img src="./img/arrow.png" alt="arrow">
-                    </div>
-                </div>
-
-                <div class="article">
-                    <img src="./img/Article4.png" alt="article1">
-                    <p class="article-title">Let’s Get Solution For Building Construction Work</p>
-                    <div class="article-footer">
-                        <p class="article-date">26 December,2022</p>
-                        <img src="./img/arrow.png" alt="arrow">
-                    </div>
-                </div>
-
-                <div class="article">
-                    <img src="./img/Article5.png" alt="article1">
-                    <p class="article-title">Low Cost Latest Invented Interior Designing Ideas.</p>
-                    <div class="article-footer">
-                        <p class="article-date">22 December,2022</p>
-                        <img src="./img/arrow.png" alt="arrow">
-                    </div>
-                </div>
-
-                <div class="article">
-                    <img src="./img/Article6.png" alt="article1">
-                    <p class="article-title">Best For Any Office & Business Interior Solution</p>
-                    <div class="article-footer">
-                        <p class="article-date">25 December,2022</p>
-                        <img src="./img/arrow.png" alt="arrow">
-                    </div>
-                </div>
-
             </div>
+
             <div class="pagination">
                 <p class="page">01</p>
                 <p class="page">02</p>
@@ -136,5 +95,7 @@
         </footer>
 
     </div>
+
+<script src="/script.js"></script>
 </body>
 </html>
